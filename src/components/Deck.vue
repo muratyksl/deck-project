@@ -59,6 +59,7 @@ export default {
   display: flex;
   gap: 1em;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card-frame {
