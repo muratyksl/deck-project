@@ -9,7 +9,7 @@
       :before-close="handleClose"
     >
       <form @submit.prevent="handleSubmit">
-        <div>
+        <div class="form-item-container">
           <label for="card-number">Card Number</label>
           <select id="card-number" v-model.number="cardNumber">
             <option value="4">4</option>
@@ -17,25 +17,27 @@
             <option value="8">8</option>
           </select>
         </div>
-        <div>
-          <label for="selected-card">Winner Card</label>
+        <div class="form-item-container">
+          <label for="selected-card">Winner Card:</label>
           <select id="selected-card" v-model="winningCard">
             <option v-for="item in cardList" :value="item">{{ item }}</option>
           </select>
         </div>
-        <div>
-          <label for="is-timer">Sureli Oyun</label>
-          <input id="is-timer" type="checkbox" v-model="isTimer"/>
+        <div class="form-item-container">
+          <label for="is-timer">Sureli Oyun:</label>
+          <input id="is-timer" type="checkbox" v-model="isTimer" />
         </div>
-        <div v-if="isTimer">
-          <label for="time-seconds">Oyun Suresi</label>
+        <div class="form-item-container" v-if="isTimer">
+          <label for="time-seconds">Oyun Suresi:</label>
           <input id="time-seconds" type="text" v-model.number="selectedTime" />
         </div>
-        <div>
-          <label for="start-after">Sure Dolunca Bastan</label>
+        <div class="form-item-container">
+          <label for="start-after">Sure Dolunca Bastan:</label>
           <input id="start-after" type="checkbox" v-model="startAfterCount" />
         </div>
-        <button type="submit">Save</button>
+        <div class="form-item-container">
+          <button type="submit">Save</button>
+        </div>
       </form>
     </el-drawer>
   </div>
@@ -56,7 +58,7 @@ export default {
       direction: "rtl",
       cardNumber: 4,
       winningCard: "queenOfHearts",
-      cardList: [],
+      cardList: [...fourCardDeck],
       isTimer: true,
       selectedTime: 20,
       startAfterCount: false,
@@ -76,6 +78,7 @@ export default {
         this.cardNumber,
         this.startAfterCount
       );
+      this.drawer= false;
     },
   },
   watch: {
@@ -95,7 +98,15 @@ export default {
 </script>
 
 <style scoped>
-a {
-  color: #42b983;
+.form-item-container {
+  margin: 1em;
+  padding: 1.2em 0.5em;
+  display: flex;
+  gap:1.5rem;
 }
+
+label{
+  width: 160px;
+}
+
 </style>

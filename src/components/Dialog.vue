@@ -56,5 +56,8 @@ export default {
 .dialog-container {
   color: #fff;
   padding: 2rem 3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 </style>
