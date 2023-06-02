@@ -1,15 +1,27 @@
 <template>
   <div>
-    <dialog :open="status === gameStatuses.ready">
-      <button @click.prevent="startGame()">Start Game</button>
+    <dialog class="native-dialog" :open="status === gameStatuses.ready">
+      <div class="dialog-container">
+        <button @click.prevent="startGame()">
+          {{ $t("dialog.startGame") }}
+        </button>
+      </div>
     </dialog>
-    <dialog :open="status === gameStatuses.lose">
-      <h3>Bank Win</h3>
-      <button @click.prevent="startGame()">Start Again</button>
+    <dialog class="native-dialog" :open="status === gameStatuses.lose">
+      <div class="dialog-container">
+        <h3>{{ $t("dialog.bankWin") }}</h3>
+        <button @click.prevent="startGame()">
+          {{ $t("dialog.startAgain") }}
+        </button>
+      </div>
     </dialog>
-    <dialog :open="status === gameStatuses.win">
-      <h3>You Win!</h3>
-      <button @click.prevent="startGame()">Start Again</button>
+    <dialog class="native-dialog" :open="status === gameStatuses.win">
+      <div class="dialog-container">
+        <h3>{{ $t("dialog.youWin") }}</h3>
+        <button @click.prevent="startGame()">
+          {{ $t("dialog.startAgain") }}
+        </button>
+      </div>
     </dialog>
   </div>
 </template>
@@ -21,7 +33,7 @@ export default {
   data() {
     return {
       test: 12,
-      gameStatuses: {...gameStatuses},
+      gameStatuses: { ...gameStatuses },
     };
   },
   computed: {
@@ -35,8 +47,14 @@ export default {
 </script>
 
 <style scoped>
-.stats-container {
-  display: flex;
-  gap: 1em;
+.native-dialog {
+  border: none;
+  border-radius: 12px;
+  top: 8rem;
+  background-color: rgb(0 0 0 / 50%);
+}
+.dialog-container {
+  color: #fff;
+  padding: 2rem 3rem;
 }
 </style>

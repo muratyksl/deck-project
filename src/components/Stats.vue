@@ -1,7 +1,7 @@
 <template>
   <div class="stats-container">
     <div>{{ $t("stats.remainingChoice") }} : {{ remainingChoice }}</div>
-    <div>{{ $t("stats.winningCard") }} : {{ winningCard }}</div>
+    <div>{{ $t("stats.winningCard") }} : {{ $t(`deck.${winningCard}`) }}</div>
     <div>
       {{ $t("stats.remainingTime") }} :
       <span v-if="settings.isTimer">

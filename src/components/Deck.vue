@@ -58,19 +58,21 @@ export default {
 .game-cards {
   display: flex;
   gap: 1em;
+  justify-content: center;
 }
 
 .card-frame {
   width: 200px;
-  height: 300px;
+  height: 288px;
 }
 
 .card-element {
   height: 100%;
   width: 100%;
   border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 8px;
   background-image: url(../assets/playing-cards-back-2.jpg);
   background-size: contain;
+  color:transparent;
 }
 </style>

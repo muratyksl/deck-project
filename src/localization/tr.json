@@ -3,5 +3,21 @@
     "remainingChoice": "Kalan Secim Hakki",
     "winningCard": "Kazanan Kart",
     "remainingTime": "Kalan Sure"
+  },
+  "deck": {
+    "queenOfHearts": "Kupa Kızı",
+    "queenOfSpades": "Maça Kızı",
+    "queenOfClubs": "Sınek Kızı",
+    "queenOfDiamonds": "Kupa Kızı",
+    "kingOfHearts": "Kupa Papazı",
+    "kingOfSpades": "Maça Papazı",
+    "kingOfClubs": "Sınek Papazı",
+    "kingOfDiamonds": "Kupa Papazı"
+  },
+  "dialog": {
+    "bankWin": "Banka Kazandı",
+    "startAgain": "Tekrar başla",
+    "startGame": "Oyunu başlat",
+    "youWin": "Sen kazandın!"
   }
 }

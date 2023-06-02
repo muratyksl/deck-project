@@ -84,7 +84,7 @@ export const useStatsStore = defineStore("stats", {
       }
       this.setGameInfo();
       this.status = gameStatuses.running;
-      if(this.settings.isTimer){
+      if (this.settings.isTimer) {
         this.startCounting();
       }
     },
@@ -100,6 +100,7 @@ export const useStatsStore = defineStore("stats", {
         if (this.remainingTimeMs <= 0) {
           this.remainingTimeMs = 0;
           this.status = gameStatuses.lose;
+          this.handleStartAfter()
         } else {
           this.remainingTimeMs -= 1000;
         }
@@ -110,14 +111,25 @@ export const useStatsStore = defineStore("stats", {
       if (choice === this.winningCard) {
         clearInterval(this.interval);
         this.status = gameStatuses.win;
+        this.handleStartAfter()
         return;
       }
       if (this.remainingChoice === 0) {
         clearInterval(this.interval);
         this.status = gameStatuses.lose;
+        this.handleStartAfter()
         return;
       }
       this.openCards = [choice, ...this.openCards];
+    },
+    handleStartAfter() {
+      if (this.settings.startAfterCount) {
+        setTimeout(() => {
+          if (this.status !== gameStatuses.running) {
+            this.startGame();
+          }
+        }, 2000);
+      }
     },
   },
 });

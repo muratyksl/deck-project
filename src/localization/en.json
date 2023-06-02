@@ -3,5 +3,21 @@
     "remainingChoice": "Remaining Choice",
     "winningCard": "Winning Card",
     "remainingTime": "Remaining Time"
+  },
+  "deck": {
+    "queenOfHearts": "Queen Of Hearts",
+    "queenOfSpades": "Quenn Of Spades",
+    "queenOfClubs": "Queen Of Clubs",
+    "queenOfDiamonds": "Queen Of Diamons",
+    "kingOfHearts": "King Of Hearts",
+    "kingOfSpades": "King Of Spades",
+    "kingOfClubs": "King Of Clubs",
+    "kingOfDiamonds": "King Of Diamonds"
+  },
+  "dialog": {
+    "bankWin": "Bank Win",
+    "startAgain": "Start Again",
+    "startGame": "Start Game",
+    "youWin": "You Win"
   }
 }
