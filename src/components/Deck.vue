@@ -65,6 +65,12 @@ export default {
 .card-frame {
   width: 200px;
   height: 288px;
+  transition: 0.25s;
+}
+
+.card-frame:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
 }
 
 .card-element {
@@ -74,6 +80,6 @@ export default {
   border-radius: 8px;
   background-image: url(../assets/playing-cards-back-2.jpg);
   background-size: contain;
-  color:transparent;
+  color: transparent;
 }
 </style>
