@@ -19,5 +19,15 @@
     "startAgain": "Tekrar başla",
     "startGame": "Oyunu başlat",
     "youWin": "Sen kazandın!"
+  },
+  "drawer": {
+    "winnerCard": "Kazanan Kart",
+    "gameTime": "Oyun zamanı",
+    "openSettings": "Ayarları aç",
+    "save": "Kaydet",
+    "startAfterWhenFinish": "Bittiğinde Baştan Başla",
+    "sureliOyun": "Zamanlayıcı",
+    "cardNumber": "Kart numarası",
+    "gameSettings": "Oyun ayarları"
   }
 }

@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <button @click="drawer = true">open settings</button>
+  <div style="grid-area: drawer">
+    <button @click="drawer = true">{{ $t("drawer.openSettings") }}</button>
 
     <el-drawer
-      title="I am the title"
+      :title="$t('drawer.gameSettings')"
       :visible.sync="drawer"
       direction="rtl"
       :before-close="handleClose"
     >
       <form @submit.prevent="handleSubmit">
         <div class="form-item-container">
-          <label for="card-number">Card Number</label>
+          <label for="card-number">{{ $t("drawer.cardNumber") }}</label>
           <select id="card-number" v-model.number="cardNumber">
             <option value="4">4</option>
             <option value="6">6</option>
@@ -18,25 +18,29 @@
           </select>
         </div>
         <div class="form-item-container">
-          <label for="selected-card">Winner Card:</label>
+          <label for="selected-card">{{ $t("drawer.winnerCard") }}:</label>
           <select id="selected-card" v-model="winningCard">
-            <option v-for="item in cardList" :value="item">{{ item }}</option>
+            <option v-for="item in cardList" :value="item">
+              {{ $t(`deck.${item}`) }}
+            </option>
           </select>
         </div>
         <div class="form-item-container">
-          <label for="is-timer">Sureli Oyun:</label>
+          <label for="is-timer">{{ $t("drawer.sureliOyun") }}:</label>
           <input id="is-timer" type="checkbox" v-model="isTimer" />
         </div>
         <div class="form-item-container" v-if="isTimer">
-          <label for="time-seconds">Oyun Suresi:</label>
+          <label for="time-seconds">{{ $t("drawer.gameTime") }}:</label>
           <input id="time-seconds" type="text" v-model.number="selectedTime" />
         </div>
         <div class="form-item-container">
-          <label for="start-after">Sure Dolunca Bastan:</label>
+          <label for="start-after"
+            >{{ $t("drawer.startAfterWhenFinish") }}:</label
+          >
           <input id="start-after" type="checkbox" v-model="startAfterCount" />
         </div>
         <div class="form-item-container">
-          <button type="submit">Save</button>
+          <button type="submit">{{ $t("drawer.save") }}</button>
         </div>
       </form>
     </el-drawer>
@@ -50,7 +54,7 @@ import {
   eightCardDeck,
   useStatsStore,
 } from "../stores/stats";
-import { mapStores, mapActions, mapState } from "pinia";
+import { mapActions } from "pinia";
 export default {
   data() {
     return {
@@ -78,7 +82,7 @@ export default {
         this.cardNumber,
         this.startAfterCount
       );
-      this.drawer= false;
+      this.drawer = false;
     },
   },
   watch: {
@@ -102,11 +106,10 @@ export default {
   margin: 1em;
   padding: 1.2em 0.5em;
   display: flex;
-  gap:1.5rem;
+  gap: 1.5rem;
 }
 
-label{
+label {
   width: 160px;
 }
-
 </style>

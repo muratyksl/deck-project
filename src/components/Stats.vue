@@ -38,7 +38,9 @@ export default {
 
 <style scoped>
 .stats-container {
+  grid-area: stats;
   display: flex;
   gap: 1em;
+  justify-content: center;
 }
 </style>

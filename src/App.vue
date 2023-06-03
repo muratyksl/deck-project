@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <header class="header">
+      <div style="grid-template-areas: corner"></div>
       <Stats />
       <SettingsDrawer />
     </header>
-    <Deck/>
+    <Deck />
     <Dialog />
   </div>
 </template>
@@ -19,8 +20,8 @@ export default {
     SettingsDrawer,
     Stats,
     Dialog,
-    Deck
-},
+    Deck,
+  },
 };
 </script>
 
@@ -34,10 +35,11 @@ export default {
   gap: 1em;
 }
 
-.header{
-  display: flex;
-  gap:6em;
-  justify-content: space-around;
-
+.header {
+  display: grid;
+  grid-template-columns: 0.3fr 2.5fr 0.3fr;
+  gap: 0px 1rem;
+  grid-auto-flow: row;
+  grid-template-areas: "corner stats drawer";
 }
 </style>

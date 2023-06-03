@@ -19,5 +19,15 @@
     "startAgain": "Start Again",
     "startGame": "Start Game",
     "youWin": "You Win"
+  },
+  "drawer": {
+    "winnerCard": "Winner Card",
+    "cardNumber": "Card Number",
+    "sureliOyun": "Timer",
+    "gameTime": "Game Time",
+    "startAfterWhenFinish": "Start Over When Finished",
+    "save": "Save",
+    "openSettings": "Open Settings",
+    "gameSettings": "Game Settings"
   }
 }
