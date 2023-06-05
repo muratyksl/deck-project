@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header class="header">
-      <div style="grid-template-areas: corner"></div>
+      <Language/>
       <Stats />
       <SettingsDrawer />
     </header>
@@ -15,8 +15,10 @@ import SettingsDrawer from "./components/SettingsDrawer.vue";
 import Stats from "./components/Stats.vue";
 import Dialog from "./components/Dialog.vue";
 import Deck from "./components/Deck.vue";
+import Language from "./components/Language.vue";
 export default {
   components: {
+    Language,
     SettingsDrawer,
     Stats,
     Dialog,
