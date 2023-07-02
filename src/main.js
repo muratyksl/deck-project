@@ -2,11 +2,15 @@ import Vue from "vue";
 import { createPinia, PiniaVuePlugin } from "pinia";
 import VueI18n from "vue-i18n";
 import ElementUI from "element-ui";
+import { inject } from "@vercel/analytics";
 import locale from "element-ui/lib/locale/lang/en";
 import "element-ui/lib/theme-chalk/index.css";
 
 import App from "./App.vue";
-import {locales} from "./localization";
+import { locales } from "./localization";
+
+// Vercel analytics
+inject();
 
 Vue.use(PiniaVuePlugin);
 Vue.use(VueI18n);
